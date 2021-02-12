@@ -1,0 +1,23 @@
+Fonctionnalités :
+
+
+-Ce déplacer 
+-Attaquer
+-Colision
+-apparition des monstres
+-Orienter le personnage
+-Donner de la vie 
+-Perdre de la vie 
+-Point d'attaque 
+-Sprites
+-Sprites celon l'angle de vue
+-Armes/items
+-Coffres 
+-Pièges
+-Labyrinthe aléatoire
+-Deep learning/IA
+-Sons
+-Système de niveaux
+-Monstres différents
+-Points de compétences 
+etc...

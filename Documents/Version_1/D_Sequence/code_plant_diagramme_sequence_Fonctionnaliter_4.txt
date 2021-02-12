@@ -1,0 +1,21 @@
+@startuml
+title Création labyrinthe aléatoire
+
+participant "j:Jeu" as j
+participant "lab:Labyrinthe" as l
+participant "case:Case [6][10]" as c
+
+create l
+j -> l : Labyrinthe()
+activate l
+l -> l : (int)(5+Math.floor(Math.random()*50))
+l -> l : 6
+l -> l : (int)(5+Math.floor(Math.random()*50))
+l -> l : 10 
+create c 
+l -> c : Case[6][10]
+l <-- c : tableau de cases
+j <-- l : Labyrinthe lab 
+deactivate l
+
+@enduml

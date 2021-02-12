@@ -1,0 +1,19 @@
+@startuml
+title Création Labyrinthe 
+
+participant "main" as m
+participant "lab : Labyrinthe" as l
+participant "cases : Cases[10][10]" as c
+
+create l
+m -> l : Labyrinthe(10,10)
+activate l
+create c 
+l -> c : Cases[10][10]
+activate c 
+c --> l : tableau de case
+deactivate c
+l --> m : Labyrinthe lab 
+deactivate l
+
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+title deplacer de monstreInteligent
+
+participant "j:JeuPlay" as j
+participant "m:Monstre" as m
+
+j -> m : deplacer( Y, X)
+activate m
+m -> m : randomm = (int)(Math.random() * 2);
+m -> m : Mx = super.getX()
+m -> m : Mx = super.getY() 
+  
+alt if randomm == 1:
+
+    alt if(X >= Mx)
+    m -> m : res = 'd'
+    else 
+    m -> m : res = 'g'
+    end
+else
+    alt if(Y >= My)
+    m -> m : res = 'b'
+    else 
+    m -> m : res = 'h'
+    end      
+end
+
+m --> j : res
+deactivate m
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+title Creation du labyrinthe
+
+participant "p:Partie" as p
+participant "l:Labyrinthe" as l
+participant "c:CaseVide" as c
+create l
+p -> l : Labyrinthe(tabLabyrinthe, width, height)
+activate l
+loop boucle sur la taille X
+    loop boucle sur la taille Y
+    create c
+    l -> c: CaseVide(X,Y)
+    activate c
+    c--> l : 
+    deactivate c
+    end
+end
+
+l --> p
+deactivate l
+@enduml

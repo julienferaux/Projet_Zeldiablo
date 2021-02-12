@@ -1,0 +1,13 @@
+@startuml
+title fonction subirDegat()
+
+participant mMoteur as m
+participant heroHero as h
+
+create h
+m -> h : subirDegat(5)
+activate h
+h -> h : pv -= 5
+m <-- h : le hero à perdu 5 de vie
+deactivate h
+@enduml

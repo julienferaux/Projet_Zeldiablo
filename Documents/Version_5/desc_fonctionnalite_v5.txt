@@ -1,0 +1,34 @@
+* Fonctionnalites version 5
+
+Résolution de la majorité des Bugs. (Kevin, Leonard, Vivian, Julien)
+
+- Fonctionnalite 1 : Creation du pattern du labyrinthe, implementation des pieges. (Vivian)
+- texte descriptif :
+- Criter de Validation :
+    - critere 1 :
+
+- Fonctionnalite 2 : Conception et gestion complete de l’Overlay + et gestion des morts . (Leonard)
+- texte descriptif : implementation des overlay pour les arme, les pv, les vie restante et le score.
+- Criter de Validation :
+    - critere 1 : tout les overlay oivent s'afficher as la bonne taille
+    - criere 2 : les morts doivent correctement renvoyer au spawn
+
+- Fonctionnalite 3 : Finalisation des méthodes de Personnages + creation d’IA faible pour les monstres + ajout de nouvelle case dans le labyrinthe . (Julien)
+- texte descriptif : 
+méthode pour verifier la mort du personnage en fonction des dégat qu'il subit modifier pour otimiser 
+ajout d'un algorithme pour le deplacement du monstreInteligent pour qu'il suive le personnage 
+ajout de nouvelle case ( pour les armes, spawn de monstre, piege, etc..) sous forme de classe et apres dans la generation du labyrinthe
+- Criter de Validation :
+    - critere 1 : que le personnage soit bien mort
+    - critere 2 : que le monstre cherche en permanence a ce raprocher du hero
+    - critere 3 : que les cases apparaissent bien a la generation du labyrinthe
+
+- Fonctionnalite 4 : Implémentation de l’Attaque/Déplacements des monstres et de l’Attaque/Utilisation d’objets du Hero (Kevin)
+- texte descriptif : Ajout à la méthode évolué de l'attaque les deplacement des monstres puis de l'utilisation d'objet du heros + attaque 
+- Criter de Validation :
+    - critere 1 : Ajout des degats des armes à l'attaque du héro
+    - critere 2 : Pouvoir attaquer
+    - critere 3 : Pouvoir ce faire attaquer
+    - critere 4 : Utiliser des objets
+    - critere 5 : Deplacement des monstres celon une ia faible
+

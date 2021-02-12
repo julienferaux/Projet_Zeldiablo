@@ -1,0 +1,17 @@
+@startuml
+title Création Hero
+
+participant "Main" as main
+participant "hero:Hero" as hero
+participant "personnage:Personnage" as personnage
+
+create hero 
+main -> hero : Héro(Jean)
+activate hero
+create personnage
+hero -> personnage : Personnage(Jean)
+personnage --> hero
+hero --> main
+deactivate hero
+
+@enduml

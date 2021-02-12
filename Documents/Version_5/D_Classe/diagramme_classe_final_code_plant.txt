@@ -1,0 +1,217 @@
+@startuml
+''' class
+class Arme {
+   - puissance : int
+   - nom : String
+   + Arme(int,String)
+   + getPuissance():int
+   + getNom():String
+}
+
+abstract class Case {
+   - occupe : boolean
+   - x : int 
+   - y : int
+   + Case(int, int)
+   + getSpriteString():String
+   + getX():int
+   + getY():int
+}
+
+
+class CaseVide{
+   + CaseVide(int,int)
+   + getSpriteString():String
+}
+
+class CaseMur {
+   + CaseMur(int,int)
+   + getSpriteString():String
+}
+
+class CaseBaton{
+   + CaseBaton(int,int)
+   + getSpriteString():String
+}
+
+class CaseEpee{
+   + CaseEpee(int,int)
+   + getSpriteString():String
+}
+
+class CaseGant{
+   + CaseGant(int,int)
+   + getSpriteString():String
+}
+
+class CaseFin{
+   + CaseFin(int,int)
+   + getSpriteString()
+}
+
+class CaseSpawn{
+   + CaseSpawn(int,int)
+   + getSpriteString():String
+}
+
+class CaseSpawnMonstre{
+   + CaseSpawnMonstre(int,int)
+   + getSpriteString():String
+}
+
+abstract class CasePiege{
+   - degat : double
+   + CasePiege(int,int)
+   + infligerDegat(Hero)
+}
+
+class CasePiegePoison{
+   - degat: double
+   + CasePiegePoison(int,int)
+   + infligerDegat(Hero):void
+   + getSpriteString():String
+}
+
+class CasePiegeExplosif{
+   - degat: double
+   + CasePiegeExplosion(int,int)
+   + infligerDegat(Hero)
+   + getSpriteString()
+}
+
+interface Effet {
+   + degat(Personnage):void
+}
+
+class ExceditionLabyrintheTropGrand{
+   + ExceptionLabyrintheTropGrand()
+}
+
+class Héro {
+   - lArme : ArrayList<Arme>
+   + Hero(String,int,int)
+   + ajouterPuissance():void
+   + getlArme():ArrayList<Arme>
+   + getMort():Boolean
+   + revive():void
+   + seDeplace(char):void
+   + setArm(Arme):void
+   + serMort(boolean):void
+   + setPuissance(Arme):void
+}
+
+class Infini{
+   + degat(Personnage)
+}
+
+class Labyrinthe { 
+   - listSpawn:ArrayList<CaseSpawnMonstre>
+   - spawn : >CaseSpawn
+   - tableauCase : case[][]
+   - tailleX : int
+   - tailleY : int 
+   + Labyrinthe(int , int)
+   + genererAlea():int
+   + get_tailleX():int
+   + get_tailleY():int
+   + getCase(int,int):Case
+   + getlisteSpawn():ArrayList<CaseSpawnMonstre>
+   + getSpawn():CaseSpawn
+   + setCase(Case,int,int):void
+}
+
+abstract class Monstre {
+   + Monstre(String,int,int)
+   + deplacer(int,int):void
+   + getAttaque():double
+   + getMort():boolean
+   + getPv():double
+}
+
+class MonstreBasique {
+   +MonstreBasique(Sting,int,int,int,double)
+   +deplacer(int,int)
+   +getMort()
+   +getPv()
+}
+
+class MonstreInteligent {
+   +MonstreInteligent(Sting,int,int,int,double)
+   +deplacer(int,int) : char
+   + getAttaque() : double
+   +getMort() : boolean
+   +getPv() : double
+}
+
+class Partie {
+   - hero : Hero
+   - labyrinthe : Labyrinthe
+   - life : int
+   - listeMonstre: ArrayListe<Monstre>
+   + Partie()
+   + addLife() : void
+   + genererMonstre() : void
+   + gererCollision(Personnage,char) : boolean
+   + getHero() : Hero
+   + getLabyrinthe() : Labyrinthe
+   + getLife() :int
+   + getListeMonstre(): ArrayListe<Monstre>
+   + substractLife() : void
+}
+
+abstract class Personnage {
+   - attaque :double
+   - mort : boolean
+   - nom : String 
+   - pv : int 
+   - pvBase :int
+   - x : int 
+   - y : int
+   + Personnage(String,int,int,int,double)
+   + attaquer(Personnage):void
+   + getAttaque():double
+   + getMort():boolean
+   + getNom():String
+   + getPv():double
+   + getPvBase():int
+   + getX():int
+   + getY():int
+   + setAttaque(double):void
+   + setMort(boolean):void
+   + setPv(double):void
+   + setVivant(boolean):void
+   + setX(int):void
+   + setY(int):void
+   + subirDegat(double):void
+}
+
+class Poison{
+   + degat(Personnage)
+}
+
+'''relation
+
+Case <|-- CaseMur
+Case <|-- CaseVide
+Case <|-- CasePiege
+Case <|-- CaseBaton
+Case <|-- CaseEpee
+Case <|-- CaseGant
+Case <|-- CaseFin
+Case <|-- CaseSpawn
+Case <|-- CaseSpawnMonstre
+CasePiege <|-- CasePiegePoison
+CasePiege <|-- CasePiegeExplosif
+Monstre "*"<--"0" Partie
+Personnage <|-- Héro
+Personnage <|-- Monstre
+Partie "0" --> "1" Héro
+Partie "0" --> "1" Labyrinthe
+Labyrinthe "0" --> "*" Case : -tableauCase
+Monstre <|-- MonstreBasique
+Monstre <|-- MonstreInteligent
+ExceditionLabyrintheTropGrand <-- Exception
+Héro "1" --> "*" Arme : -arme
+Effet <|.. Poison
+Effet <|.. Infini
+@enduml

@@ -1,0 +1,143 @@
+@startuml
+''' class
+
+class JeuPlay{
+   + sx : int 
+   + sy : int 
+   + cooX : int 
+   + cooY :int 
+   + mode : String
+   - partie : Partie
+   + JeuPlay()
+   + evoluer(CClavier,CSouris):String
+   + etreFini():boolean
+   + getPartie():Partie
+}
+
+class PanelDessin {
+   - serialVersionUID:long
+   - imageSuvante:BufferedImage
+   - imageEnCours:BufferedImage
+   - width:int
+   - height:int
+   + PanelDessin(int,int,DessinAbstract)
+   + dessinJeu():void
+   + paint(Graphics):void
+}
+
+class Dessin {
+   + Dessin(JeuAbstract)
+   + dessiner(BufferedImage):void
+}
+
+class CClavier {
+   - touches:HashSet<Integer>
+   - touchePressed:HashSet<Integer>
+   + CClavier()
+   + inPressed(int):boolean
+   + getTyped(int):boolean 
+   + clearTouches():void
+   + keyPressed(KeyEvent):void
+   + KeyReleased(KeyEvent):void
+   + keyTyped(KeyEvent):void
+}
+
+interface DessinAbstract{}
+
+class JeuGraphique {
+   - sx: int 
+   - sy:int
+   + mode:String
+   + JeuGraphique()
+   + evoluer(CClavier,CSouris):String
+   + etreFini():boolean
+}
+
+class Main {
+   + Main()
+   + main(String[]):void
+}
+
+class DessinPlay {
+   + playerSprite:String
+   + wallSprite:String 
+   + spawnSprite:String
+   + DessinPlay(JeuPlay)
+   + dessin(BufferedImage):void
+}
+
+interface JeuAbstract {
+   + evoluer(CClavier,CSouris):String
+   + etreFini():boolean
+ }
+
+class InterfaceGraphique {
+   + interfaceGraphique(DessinAbstract,int,int)
+   + getControleur():CClavier
+   + dessiner():void
+}
+
+class MoteurGraphique {
+   + MoteurGraphique(JeuAbstract,DessinAbstract)
+   + lancerJeuBase(int,int,int):void
+   + lancerJeu(int,int,int):void
+   + creeInterface(int,int):void
+}
+
+class Commande {
+   + gauche : boolean 
+   + droite : boolean
+   + haut : boolean
+   + bas : boolean
+   + Commande()
+   + Commande(Commande)
+}
+
+class CSouris {
+   + appuye : boolean 
+   + x : int 
+   + y : int 
+   + cliked : boolean
+   + CSouris()
+   + mousePressed(MouseEvent):void
+   + declik():void
+   + getClicked():boolean
+   + mouseReleased(MouseEvent):void
+   + mouseDragged(MouseEvernt):void
+   + mouseMoved(MouseEvent):void
+   + getX():int
+   + getY():int
+   + isPressed():boolean
+}
+
+'''relation
+CSouris "1"<--"0" InterfaceGraphique : -souris
+CSouris <.. JeuPlay
+CSouris <.. MoteurGraphique
+CSouris <.. JeuAbstract
+CSouris <.. JeuGraphique
+InterfaceGraphique "1" <--"0" MoteurGraphique : -gui
+DessinPlay <.. Main
+DessinPlay "1"<--"0" Dessin : +play
+MoteurGraphique <.. Main
+JeuAbstract "1"<--"0" MoteurGraphique : -jeu
+JeuAbstract <|.. JeuGraphique
+JeuAbstract <|.. JeuPlay
+JeuAbstract <.. Dessin
+JeuGraphique "1" <-- "0" Dessin : +jeu
+DessinAbstract "1" <-- "0" PanelDessin : -dessin
+DessinAbstract "1" <-- "0" MoteurGraphique : -dessin
+DessinAbstract <|.. DessinPlay
+DessinAbstract <|.. Dessin
+DessinAbstract <.. InterfaceGraphique
+CClavier "1" <-- "0" InterfaceGraphique : -clavier
+CClavier <.. JeuAbstract
+CClavier <.. JeuGraphique
+CClavier <.. JeuPlay
+CClavier <.. MoteurGraphique
+PanelDessin "1" <--"0" InterfaceGraphique : -panel
+JeuPlay <.. Dessin
+JeuPlay <.. Main
+JeuPlay "1" <-- "0" DessinPlay : -jeu
+JeuPlay "1" <-- "0" JeuGraphique : +JeuP
+@enduml

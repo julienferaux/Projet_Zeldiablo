@@ -1,0 +1,17 @@
+@startuml
+title Methode attaquer
+
+participant "Main" as main
+participant "monstre:Monstre" as m
+participant "hero:Hero" as h
+
+main -> m : attaquer(hero)
+activate m
+m -> h: subirDegat(5)
+activate h
+h -> h : Pv -= 5
+h--> m
+deactivate h
+m --> main
+deactivate m
+@enduml

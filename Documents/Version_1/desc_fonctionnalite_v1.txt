@@ -1,0 +1,27 @@
+* Fonctionnalites version 1
+
+- Fonctionnalite 1 : Creation Personnage/Hero/Monstre (Vivian Michel)
+- Texte descriptif : Pouvoir creer un hero ou un monstre de type Personnage 
+- Critere de validation :
+	- critere 1 : Creer un personnage
+	- critere 2 : Differencier monstre et hero 
+
+- Fonctionnalite 2 : Creation du Labyrinthe (Julien Feraux)
+- Texte descriptif : Pouvoir creer des labyrinthes en choisissant la taille ou avec une taille aleatoire
+- Critere de validation :
+	- critere 1 creer un nouveau labyrinthe
+ 	- critere 2 choisir sa taille en abscisse et ordonnee
+
+- Fonctionnalite 3 : Creation de la classe principal/jeu (UNSER Kevin)
+- Texte descriptif : Pouvoir creer un Jeu et le lanceur du jeu
+- Critere de validation :
+	- critere 1 : instancier un labyrinthe aleatoire
+	- critere 2 : instancier un hero de type personnage
+	- critere 3 : instancier une liste de monstre pouvant etre de plusieurs types
+	- critere 4 : instancier un jeu dans le programme proncipale
+
+- Fonctionnalite 4 : Creation du systeme de labyrinthe aleatoire (Léonard Schmitt)
+- Texte descriptif : creation du labyrinthe avec une taille aleatoire entre 5 et 50 case
+- Critere de validation :
+	- critere 1 : creer un nouveau labyrinthe 
+	- critere 2 : choisir une taille aleSatoire comprise en 5 et 50

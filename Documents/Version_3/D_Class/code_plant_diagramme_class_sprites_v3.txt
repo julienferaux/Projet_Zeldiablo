@@ -1,0 +1,28 @@
+@startuml
+''' class
+class Sprites {
+   - images : Map<String,BufferedImage>
+   + Sprites()
+   + chargerImage(String,String):void
+   + chargerImage(String,String,int,int,int,int):void
+   + chargerFeuille(String,String,int,int):void
+   + getImage(String):Image
+   + dessiner(Graphics,String,int,int):void
+   + dessinerCentre(Grapics,String,int,int):void
+}
+
+class Sprite {
+   + nomImage:String
+   + x:int
+   + y:int
+   + Sprite(String)
+   + dessiner(Graphics):void
+}
+
+class Scene {
+   + Scene()
+}
+
+'''relation
+Sprites <.. Sprite
+@enduml

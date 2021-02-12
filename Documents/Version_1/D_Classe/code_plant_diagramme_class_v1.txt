@@ -1,0 +1,60 @@
+@startuml
+''' class
+
+class Principal {
+    + Principal()
+    + main (String[]):void
+}
+
+class Jeu {
+    + Jeu()
+}
+
+class Labyrinthe { 
+   - tailleX : int
+   - tailleY : int 
+   + Labyrinthe(int , int)
+   + Labyrinthe ()
+}
+
+abstract class Personnage {
+   - nom : String 
+   - pv : int 
+   + Personnage(String)
+   + getNom():String 
+   + getPv():int
+}
+
+
+abstract class Monstre {
+   + Monstre(String)
+}
+
+class Héro {
+   + Hero(String)
+}
+
+class Mur {
+   + Mur()
+}
+
+class CaseVide{
+   + CaseVide()
+}
+
+abstract class Case {
+   + Case()
+}
+
+'''relation
+Jeu <.. Principal
+Personnage <|-- Héro
+Personnage <|-- Monstre
+Case <|-- Mur
+Case <|-- CaseVide
+Jeu "0" --> "1" Labyrinthe : -labyrinthe
+Labyrinthe "0" --> "*" Case : -tableauCase
+Personnage "0" --> "1" Case : - caseActu
+Jeu "0" --> "*" Monstre : -listeMonstre
+Jeu "0" --> "1" Personnage : -hero
+@enduml

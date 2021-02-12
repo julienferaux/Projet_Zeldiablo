@@ -1,0 +1,21 @@
+@startuml
+participant "m:Main" as m
+participant "j:Jeuplay" as j
+participant "heroHero" as h
+
+
+m -> j : evoluer (touche h du clavier)
+activate j
+alt il n'y a pas de mur
+    j -> h : seDeplacer('h')
+    activate h
+    h --> j :le hero se deplace
+    deactivate h
+else il y a un mur 
+    j -> h : seDeplacer('h')
+    activate h
+    h --> j : le hero reste sur place
+end
+j --> m
+deactivate j
+@enduml

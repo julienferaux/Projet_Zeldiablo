@@ -1,0 +1,20 @@
+* Fonctionnalites version 3
+
+- Fonctionnalite 1 : Ajout de methode pour le hero et pour le monstre (Feraux Julien , Michel Vivian)
+- texte descriptif : Nous avons ajouter les methodes de getion des point de vie et de mort ,la perte de degat suite a une attaque , ajout d'un type monstre Basique
+- Criter de Validation:
+    - critere 1 : les Personnage doivent perdre de la vie
+    - critere 2 : Si les personnage n'on plus de point de viue il doivent mourir
+
+- Fonctionnalite 2 : Gestion des colisions entre des Personnages avec les murs + Création d'autre type de case (UNSER Kevin)
+- Texte descriptif : Empecher les personnages de traverser les murs et diversifier les cases 
+- Critère de validation :
+  - critere 1 : les personnages ne traverserons pas les murs
+  - critere 2 : ajouter des cases pieges
+  - critere 3 : ajouter une case de spawn
+  - critere 4 : ajouter différents pieges avec des effets
+
+- Fonctionnalite 3 : Création et affichage d'un labyrinthe as partir d'un model prédéfini (SCHMITT Leonard)
+ - critere 1 : le labyrinthe dois exactement representer le model
+ - critere 2 : il ne peut pas etre plus grand que 45x45 cases
+ - critere 3 : permet d'afficher les differente case du jeu

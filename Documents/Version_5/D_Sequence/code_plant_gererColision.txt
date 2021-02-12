@@ -1,0 +1,17 @@
+@startuml
+title gererColision
+
+participant "j:JeuPlay" as j
+participant "p:Partie" as p
+
+j -> p : gererColision( perso, 'd')
+activate p
+    alt case 'd':
+       alt case labyrinthe.getCase(ord,abs + 1) instanceof CaseMur :
+       p -> p : col = true
+       end
+    end
+
+p --> j : col
+deactivate p
+@enduml

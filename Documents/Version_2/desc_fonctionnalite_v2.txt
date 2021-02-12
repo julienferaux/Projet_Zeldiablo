@@ -1,0 +1,15 @@
+* Fonctionnalites version 2
+
+- Fonctionnalite 1 : Création des methodes de déplacement (Julien Feraux /Vivian Michel)
+- Texte descriptif : pouvoir déplacer les Personnage dans le labyrinthe
+- Critère de validation :
+  - critere 1 : deplacement des Personnages
+  - critere 2 : les personnage ce deplace celon les infos des touches du clavier
+
+- Fonctionnalite 2 : Implementation du Moteur Graphique V3 (Unser Kévin / Schmitt Leonard)  Pas de Diagramme sur cette partie cest logique.
+- Texte descriptif : permet de générer un environnement graphique de base au jeu
+- Critère de validation :
+  - critere 1 : Gerer la souris (deplacements + clicks)
+  - critere 2 : Gerer le clavier
+  - critere 3 : afficher les sprites 
+  - critere 4 : visualiser les deplacements

@@ -1,0 +1,22 @@
+@startuml
+title Création tableau
+
+participant "Principale" as p
+participant "jeu:Jeu" as j
+participant "labyrinthe:Labyrinthe" as l
+participant "hero:Hero" as h
+participant "listeMonstre:ArrayList<Monstre>" as m
+
+create j
+p -> j
+activate j
+create l
+j -> l
+create h
+j -> h : nom hero
+create m
+j -> m
+p <-- j
+deactivate j
+
+@enduml

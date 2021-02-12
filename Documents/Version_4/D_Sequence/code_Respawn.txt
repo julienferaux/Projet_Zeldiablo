@@ -1,0 +1,13 @@
+@startuml
+JeuPlay -> Partie : getHero()
+JeuPlay <- Partie : Hero
+JeuPlay -> Partie : getLife
+JeuPlay <- Partie : int life
+alt life > 0
+ JeuPlay -> Partie : substractLife()
+ JeuPlay -> Hero : revive()
+ JeuPlay -> JeuPlay : setToSpawn()
+else
+JeuPlay -> Console : "GameOver"
+end
+@enduml

@@ -1,0 +1,3 @@
+-Le moteur graphique est ajoute mais pas implémente.
+-Le diagramme de classe final de la version 1 est generer avec eclipse car seule les methodes/attributs difere du diagramme original
+-La classe "principal" ne sert à rien pour l'instant ou seras surement supprimer à cause du moteur graphique

@@ -1,0 +1,13 @@
+@startuml
+title fonction se déplacer
+
+participant "m:Moteur" as m
+participant "hero:Hero" as h
+
+create h
+m -> h : seDeplace('h')
+activate h
+h <- h : setY(getY-1)
+m <-- h : le hero se deplace vers le haut
+deactivate h
+@enduml

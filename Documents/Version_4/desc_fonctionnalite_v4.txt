@@ -1,0 +1,19 @@
+* Fonctionnalites version 4
+
+- Fonctionnalite 1 : Fusion moteur graphique et physique dans tout les déplacement, affichage et colision (UNSER Kevin)
+- texte descriptif : Permet de faire bouger le sprite du personnage et de déssiner le labyrinthe en temps réel en respectant l'affichage
+- Criter de Validation : 
+    - critere 1 : Inverser les colisions pour respecter l'affichage du moteur
+    - critère 2 : Changer les coordonnes du hero 
+    - critere 3 : Changer le sprite du hero de place 
+
+- Fonctionnalite 2 : reaparition du perso (SCHMITT Leonard)
+- texte desciptif : mort du personnage avec une reaparition au spawn et la perte d'une vie
+- criter de validation :
+    - critere 1 :
+
+- Fonctionnalite 3 : Ajout de differente arme ,ajout de different monstre
+- Texte Descriptif : Nous avont ajouter plusieur arme avec une puissance différente , ajout de plusieurs monstre avec différentes caractéristique
+- critère de validation:
+    - critere 1 : les arme change l'attaque du personnage
+    - critere 2 : les monstre on differente caractéristique

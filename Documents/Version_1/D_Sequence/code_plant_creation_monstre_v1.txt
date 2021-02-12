@@ -1,0 +1,17 @@
+@startuml
+title Création Monstre
+
+participant "Main" as main
+participant "monstre:Monstre" as m
+participant "personnage:Personnage" as personnage
+
+create m 
+main -> m : Monstre(paul)
+activate m
+create personnage
+m -> personnage : Personnage(paul)
+personnage --> m
+m --> main
+deactivate m
+
+@enduml

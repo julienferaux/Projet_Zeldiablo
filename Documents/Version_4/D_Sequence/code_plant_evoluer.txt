@@ -1,0 +1,67 @@
+@startuml
+title methode evoluer 
+
+participant "j : Jeu " as j 
+participant "h:Hero" as h
+participant "m:Monstre" as m
+
+j -> h : evoluer(touche clavier)
+activate h
+alt hero mort
+   alt nombre de vie >1  
+      h->h : respaw 
+    else nombre de vie < 1 
+      j-> j : mode = "Game Over"
+    end
+end
+alt touche attaque
+   loop liste de monstre 
+     alt monstre au dessus 
+        h-> h : atttaquer(monstre)
+     else monstre en dessous
+        h-> h : atttaquer(monstre)
+     else monstre a droite 
+        h-> h : atttaquer(monstre)
+     else monstre a gauche 
+        h-> h : atttaquer(monstre)
+     end 
+   end 
+end
+
+alt touche déplacement 
+   alt pas de mur
+      h->h : deplacement 
+   else : mur
+      h-> h :rester sur place
+   end 
+end 
+
+alt compteur Frame >60 
+   loop liste de monstre 
+      alt lettre aléatoire de déplacement 
+         alt pas de mur
+            m->m : deplacement 
+         else : mur
+            m-> m :rester sur place
+         end 
+      end 
+   end 
+end
+
+
+loop liste de monstre 
+  alt hero au dessus 
+     m-> m : atttaquer(hero)
+  else hero en dessous
+     m-> m : atttaquer(hero)
+  else hero a droite 
+     m-> m : atttaquer(hero)
+  else hero a gauche 
+     m-> m : atttaquer(hero)
+  end 
+end 
+
+alt hero sur case piege 
+   h->h : infliger degat selon le piege
+end
+@enduml
